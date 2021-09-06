@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "./index.scss";
 import "./App.css";
-import { Tab, Tabs } from "carbon-components-react";
-import logo from "./jgpai.svg";
+import { Tab, Tabs, Loading } from "carbon-components-react";
 import * as D3 from "d3";
 import HeaderView from "./HeaderView";
 import MetadataView from "./MetadataView";
@@ -12,25 +11,50 @@ import RawPayloadView from "./RawPayloadView";
 const csvUrl = "/data.csv";
 const metadataUrl = "/metadata.json";
 
-var vizData: D3.DSVRowArray<string>;
+export default class App extends React.Component {
+  drstiData!: D3.DSVRowArray<string>;
+  drstiMetadata!: any;
 
-class App extends Component {
-  // // Reads the metadata
-  // fetch(metadataUrl)
-  //   .then(function (response) {
-  //     return response.json();
-  //   })
-  //   .then(function (jsonPayload) {
-  //     //columns = jsonPayload
-  //   });
-
-  render() {
+  constructor(props: any) {
+    super(props);
     // Assigns the changed data to the usable data for all
     D3.csv(csvUrl).then((data) => {
-      vizData = data;
-      console.log("New load!\n" + data);
+      this.drstiData = data;
+      console.log("New data\n" + D3.csvFormat(this.drstiData));
+      this.setState({ data: true });
     });
 
+    // Reads the metadata
+    fetch(metadataUrl)
+      .then((response) => {
+        return response.json();
+      })
+      .then((metadata) => {
+        console.log("New metadata\n" + JSON.stringify(metadata));
+        this.drstiMetadata = "x";
+        this.setState({ metadata: true });
+      });
+  }
+
+  render() {
+    // Renders loading if data or metadata are not here
+    if (this.drstiMetadata == null || this.drstiData == null) {
+      if (this.drstiMetadata == null) {
+        console.log("[warn] Metadata is null");
+      }
+      if (this.drstiData == null) {
+        console.log("[warn] Data is null");
+      }
+
+      return (
+        <div className="App">
+          <HeaderView />
+          <Loading description="Loading data" withOverlay={true} />
+        </div>
+      );
+    }
+
+    // Everything should be here for full rendering
     return (
       <div className="App">
         <HeaderView />
@@ -40,16 +64,21 @@ class App extends Component {
           <Tab id="tab-1" label="Visualization">
             <p></p>
           </Tab>
-          <Tab id="tab-2" label="Raw data">
+          <Tab
+            id="tab-2"
+            label="Raw data"
+            title="Raw data in a table as downloaded from the server"
+          >
             <p></p>
+            <RawPayloadView data={this.drstiData} />
           </Tab>
           <Tab
             id="tab-3"
             label="Raw payload"
-            title="Raw data as downloaded from the server"
+            title="Raw data (as the payload) as downloaded from the server"
           >
             <p></p>
-            <RawPayloadView data={vizData} />
+            <RawPayloadView data={this.drstiData} />
           </Tab>
           <Tab
             id="tab-4"
@@ -57,12 +86,10 @@ class App extends Component {
             title="Meta data about the downloaded data"
           >
             <p></p>
-            <MetadataView data={vizData} />
+            <MetadataView data={this.drstiData} />
           </Tab>
         </Tabs>
       </div>
     );
   }
 }
-
-export default App;
