@@ -1,0 +1,14 @@
+[
+    {
+        "field": "Period",
+        "headerName": "Month",
+        "width": 200
+    },
+    {
+        "field": "Total",
+        "headerName": "pax",
+        "width": 150,
+        "editable": false,
+        "sortable": true
+    }
+]
