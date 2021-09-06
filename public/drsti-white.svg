@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="355 293 217 134" width="217" height="134">
+  <defs>
+    <font-face font-family="IBM Plex Sans" font-size="96" panose-1="2 11 7 3 5 2 3 0 2 3" units-per-em="1000" underline-position="-75" underline-thickness="88" slope="0" x-height="522" cap-height="698" ascent="1024.9939" descent="-274.9939" font-weight="600">
+      <font-face-src>
+        <font-face-name name="IBMPlexSans-SemiBold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica" font-size="96" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="532.22656" cap-height="719.7266" ascent="770.0195" descent="-229.98047" font-weight="700">
+      <font-face-src>
+        <font-face-name name="Helvetica-Bold"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.18.5\n2021-09-06 20:24:38 +0000</metadata>
+  <g id="Canvas_1" fill="none" stroke-dasharray="none" fill-opacity="1" stroke-opacity="1" stroke="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <text transform="translate(360 298)" fill="white">
+          <tspan font-family="IBM Plex Sans" font-size="96" font-weight="600" fill="white" x="0" y="98">d</tspan>
+          <tspan font-family="Helvetica" font-size="96" font-weight="700" fill="white" y="98">ṛṣṭ</tspan>
+          <tspan font-family="IBM Plex Sans" font-size="96" font-weight="600" fill="white" y="98">i</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
