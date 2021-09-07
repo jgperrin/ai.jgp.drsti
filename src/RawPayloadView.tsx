@@ -5,13 +5,6 @@ import * as D3 from "d3";
 export default function RawPayloadView(props: {
   data: D3.DSVRowArray<string>;
 }) {
-  // const csvUrl = "/data.csv";
-
-  // D3.csv(csvUrl).then((data) => {
-  //     // this.vizData = data;
-  //     // console.log("New data\n" + D3.csvFormat(this.vizData));
-  //   });
-
   if (props.data == null) {
     return <div>No data</div>;
   }
