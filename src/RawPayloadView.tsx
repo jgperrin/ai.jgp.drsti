@@ -1,4 +1,5 @@
-import { ScalesTipped32, Row32, Column32 } from "@carbon/icons-react";
+import React from "react";
+import { ScalesTipped32, Row32, Column32 } from '@carbon/icons-react';
 import { CodeSnippet } from "carbon-components-react";
 import * as D3 from "d3";
 

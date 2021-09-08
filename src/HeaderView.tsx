@@ -1,8 +1,9 @@
+import React from "react";
 import {
   Header,
   HeaderName,
   HeaderNavigation,
-} from "carbon-components-react/lib/components/UIShell";
+} from "carbon-components-react";
 
 export default function HeaderView() {
   return (

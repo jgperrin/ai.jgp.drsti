@@ -1,16 +1,18 @@
 import React from "react";
-import "./index.scss";
-import "./App.css";
+import "./app.scss";
 import { Tab, Tabs, Loading } from "carbon-components-react";
 import * as D3 from "d3";
 import HeaderView from "./HeaderView";
 import MetadataView from "./MetadataView";
 import RawPayloadView from "./RawPayloadView";
+import RawDataView from "./RawDataView";
+import LabView from "./LabView";
 
 // What are we downloading & from where
 const csvUrl = "/data.csv";
 const metadataUrl = "/metadata.json";
 
+// Main application
 export default class App extends React.Component {
   drstiData!: D3.DSVRowArray<string>;
   drstiMetadata!: any;
@@ -31,7 +33,7 @@ export default class App extends React.Component {
       })
       .then((metadata) => {
         console.log("New metadata\n" + JSON.stringify(metadata));
-        this.drstiMetadata = "x";
+        this.drstiMetadata = metadata;
         this.setState({ metadata: true });
       });
   }
@@ -63,6 +65,7 @@ export default class App extends React.Component {
         <Tabs>
           <Tab id="tab-1" label="Visualization">
             <p></p>
+            <LabView data={this.drstiData} metadata={this.drstiMetadata} />
           </Tab>
           <Tab
             id="tab-2"
@@ -70,7 +73,7 @@ export default class App extends React.Component {
             title="Raw data in a table as downloaded from the server"
           >
             <p></p>
-            <RawPayloadView data={this.drstiData} />
+            <RawDataView data={this.drstiData} metadata={this.drstiMetadata} />
           </Tab>
           <Tab
             id="tab-3"
