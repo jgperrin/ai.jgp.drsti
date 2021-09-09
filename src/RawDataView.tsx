@@ -40,7 +40,6 @@ export default function RawDataView(props: {
               <TableRow key={uuid.v4()}>
                 {props.metadata.map((header: any) => (
                   <TableCell key={uuid.v4()}>
-                    {console.log(row[header.key])}
                     {row[header.key]}
                   </TableCell>
                 ))}
