@@ -23,8 +23,7 @@ export default function LabView(props: {
     return <div>No metadata</div>;
   }
 
-  console.log("Meta in table\n" + JSON.stringify(props.metadata));
-
+  // We have the data & metadata, let's balance la purée!
   return (
     <div>
       <TableContainer title="Raw data">

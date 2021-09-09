@@ -16,7 +16,7 @@ function MetadataView(props: { data: D3.DSVRowArray<string> }) {
     <div>
       <Grid narrow>
         <Row condensed>
-          <Column>
+          <Column lg={3}>
             <Tile>
               <ScalesTipped32 />
               <br />
@@ -25,8 +25,9 @@ function MetadataView(props: { data: D3.DSVRowArray<string> }) {
               <br />
               KB
             </Tile>
+            <br />
           </Column>
-          <Column>
+          <Column lg={3}>
             <Tile>
               <Row32 />
               <br />
@@ -35,8 +36,9 @@ function MetadataView(props: { data: D3.DSVRowArray<string> }) {
               <br />
               records
             </Tile>
+            <br />
           </Column>
-          <Column>
+          <Column lg={3}>
             <Tile>
               <Column32 />
               <br />

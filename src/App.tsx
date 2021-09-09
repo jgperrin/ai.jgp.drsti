@@ -6,7 +6,7 @@ import HeaderView from "./HeaderView";
 import MetadataView from "./MetadataView";
 import RawPayloadView from "./RawPayloadView";
 import RawDataView from "./RawDataView";
-import LabView from "./LabView";
+import ChartView from "./ChartView";
 
 // What are we downloading & from where
 const csvUrl = "/data.csv";
@@ -63,9 +63,9 @@ export default class App extends React.Component {
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <Tabs>
-          <Tab id="tab-1" label="Visualization">
+          <Tab id="tab-1" label="Chart">
             <p></p>
-            <LabView data={this.drstiData} metadata={this.drstiMetadata} />
+            <ChartView data={this.drstiData} metadata={this.drstiMetadata} /> 
           </Tab>
           <Tab
             id="tab-2"
