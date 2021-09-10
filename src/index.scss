@@ -3,5 +3,5 @@
 $carbon--theme: $carbon--theme--g90;
 @include carbon--theme();
 
-@import "@carbon/charts/styles.css";
+@import "@carbon/charts/styles-g90.css";
 @import "carbon-components/scss/globals/scss/styles.scss";

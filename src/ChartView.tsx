@@ -26,8 +26,7 @@ export default class ChartView extends React.Component<DataProps, {}> {
       },
       left: {
         mapsTo: "y",
-        title: "Value",
-        max: 10000,
+        title: "Value"
       },
     },
     experimental: true,
@@ -36,7 +35,7 @@ export default class ChartView extends React.Component<DataProps, {}> {
         enabled: true,
       },
     },
-    //curve: "curveMonotoneX",
+    curve: "curveMonotoneX",
     height: "600px",
   };
 
@@ -57,7 +56,7 @@ export default class ChartView extends React.Component<DataProps, {}> {
 
     this.data.map((row: any) => {
       let x: any = row[this.metadata[0].key];
-      let y: number = row[this.metadata[1].key];
+      let y: number = +row[this.metadata[1].key];
       this.datax.push({ group: metaGroup, x: x, y: y });
       rowId++;
     });

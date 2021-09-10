@@ -1,10 +1,1 @@
-[
-  {
-    "header": "Month",
-    "key": "Period"
-  },
-  {
-    "header": "Pax Count",
-    "key": "Total"
-  }
-]
+[{"header":"month","key":"month"},{"header":"internationalPax","key":"internationalPax"},{"header":"domesticPax","key":"domesticPax"},{"header":"pax","key":"pax"}]
