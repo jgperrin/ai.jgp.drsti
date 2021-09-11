@@ -1,1 +1,1 @@
-[{"header":"month","key":"month"},{"header":"internationalPax","key":"internationalPax"},{"header":"domesticPax","key":"domesticPax"},{"header":"pax","key":"pax"}]
+{"ytitle":"Passenger (000s)","columns":[{"header":"Year","key":"year"},{"header":"Passengers","key":"pax"},{"header":"International Passengers","key":"internationalPax"},{"header":"Domestic Passengers","key":"domesticPax"}],"xtitle":"Year 2000 - 2019","title":"Air passenger traffic per year"}

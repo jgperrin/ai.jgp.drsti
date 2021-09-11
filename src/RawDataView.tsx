@@ -30,7 +30,7 @@ export default function RawDataView(props: {
         <Table>
           <TableHead>
             <TableRow>
-              {props.metadata.map((header: any) => (
+              {props.metadata.columns.map((header: any) => (
                 <TableHeader>{header.header}</TableHeader>
               ))}
             </TableRow>
@@ -38,7 +38,7 @@ export default function RawDataView(props: {
           <TableBody>
             {props.data.map((row: any) => (
               <TableRow key={uuid.v4()}>
-                {props.metadata.map((header: any) => (
+                {props.metadata.columns.map((header: any) => (
                   <TableCell key={uuid.v4()}>
                     {row[header.key]}
                   </TableCell>
