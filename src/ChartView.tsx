@@ -57,6 +57,7 @@ export default class ChartView extends React.Component<DataProps, {}> {
 
     this.options.title=this.metadata.title;
     this.options.axes["bottom"].title=this.metadata.xtitle;
+    this.options.axes["bottom"].scaleType=this.metadata.xscale;
     this.options.axes["left"].title=this.metadata.ytitle;
 
     let rowId: number = 0;
