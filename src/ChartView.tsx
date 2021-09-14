@@ -55,18 +55,20 @@ export default class ChartView extends React.Component<DataProps, {}> {
     let metaGroup: string = this.metadata.columns[1].header; // header of col
     console.log(metaX + "/" + metaY + "/" + metaGroup);
 
-    this.options.title=this.metadata.title;
-    this.options.axes["bottom"].title=this.metadata.xtitle;
-    this.options.axes["bottom"].scaleType=this.metadata.xscale;
-    this.options.axes["left"].title=this.metadata.ytitle;
+    this.options.title = this.metadata.title;
+    this.options.axes["bottom"].title = this.metadata.xtitle;
+    this.options.axes["bottom"].scaleType = this.metadata.xscale;
+    this.options.axes["left"].title = this.metadata.ytitle;
 
     let rowId: number = 0;
     this.data.map((row: any) => {
-      let x: Date = row[this.metadata.columns[0].key] ; // TODO issue with date
+      let x: Date = row[this.metadata.columns[0].key]; // TODO issue with date
       for (let i: number = 1; i < colCount; i++) {
-        let y: number = +row[this.metadata.columns[i].key];
-        let metaGroup: string = this.metadata.columns[i].header;
-        this.datax.push({ group: metaGroup, x: x, y: y });
+        if (row[this.metadata.columns[i].key] != null && row[this.metadata.columns[i].key] != "") {
+          let y: number = +row[this.metadata.columns[i].key];
+          let metaGroup: string = this.metadata.columns[i].header;
+          this.datax.push({ group: metaGroup, x: x, y: y });
+        }
       }
       rowId++;
     });
