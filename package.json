@@ -1,10 +1,10 @@
 {
   "name": "drsti",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@carbon/charts-react": "latest",
-    "@carbon/icons-react": "^10.37.0",
+    "@carbon/icons-react": "latest",
     "@carbon/themes": "latest",
     "@types/carbon-components-react": "latest",
     "@types/carbon__icons-react": "latest",

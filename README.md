@@ -1,4 +1,5 @@
-# ai.jgp.drsti
+# dṛṣṭi
+
 Simple data visualization tool
 
 
