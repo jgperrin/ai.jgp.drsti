@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@carbon/charts-react": "latest",
+    "@carbon/icons-react": "^10.37.0",
     "@carbon/themes": "latest",
     "@types/carbon-components-react": "latest",
     "@types/carbon__icons-react": "latest",
